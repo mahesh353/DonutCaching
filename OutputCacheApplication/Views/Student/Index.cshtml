@@ -1,0 +1,35 @@
+﻿@model IEnumerable<OutputCacheApplication.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<p>
+    <div class="alert alert-info"><b>Data Collected @@ @DateTime.Now.ToString()</b></div>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+       
+    </tr>
+}
+
+</table>
